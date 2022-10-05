@@ -36,3 +36,20 @@ def spawn_ship(board):
         while board[ship_row][ship_column] == "X":
             ship_row, ship_column = randint(0, 7), randint(0, 7)
         board[ship_row][ship_column] = 'X'
+
+def ship_position():
+    """
+    Input field to enter ship row and column
+    Checks if the input is valid
+    Returns row as an integer and removes 1 for indexing, converts letters to numbers
+    """
+    row = input('Please enter a ship row 1-8')
+    while row not in '12345678':
+        print('Please enter a valid row number')
+        row = input('Please enter a ship row 1-8')
+
+    column = input('Please enter a ship column A-H')
+    while column not in 'ABCDEFGH':
+        print('Please enter a valid ship column')
+        column = input('Please enter a ship column A-H').upper()
+    return int(row) - 1, letter_to_number[column]
