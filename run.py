@@ -53,3 +53,15 @@ def ship_position():
         print('Please enter a valid ship column')
         column = input('Please enter a ship column A-H').upper()
     return int(row) - 1, letter_to_number[column]
+
+def hit_ships(board):
+    """
+    Loops through the board and checks for "X"
+    If "X" exists increase count(score) by 1
+    """
+    count = 0
+    for row in board:
+        for column in row:
+            if column == "X":
+                count += 1
+    return count
