@@ -64,6 +64,8 @@ def hit_ships(board):
                 count += 1
     return count
 
+# Spawns board, sets the turns to 10
+# Displays messages in relation to what input data is recieved from the player
 if __name__ == "__main__":
     spawn_ship(PLAYER_BOARD)
     turns = 10
