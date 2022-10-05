@@ -5,11 +5,11 @@
 from random import randint
 
 # Creates the player and computers board sizes
-PLAYER_BOARD = [[' '] * 10 for x in range(10)]
-COMPUTER_BOARD = [[' '] * 10 for x in range(10)]
+PLAYER_BOARD = [[' '] * 8 for x in range(8)]
+COMPUTER_BOARD = [[' '] * 8 for x in range(8)]
 
 # Converts letters to numbers
-letter_to_number = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9,}
+letter_to_number = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
 def print_board(board):
     """
@@ -31,8 +31,8 @@ def spawn_ship(board):
     """
     
     for ship in range(5):
-        ship_row, ship_column = randint(0, 9), randint(0, 9)
+        ship_row, ship_column = randint(0, 7), randint(0, 7)
         
         while board[ship_row][ship_column] == "X":
-            ship_row, ship_column = randint(0, 9), randint(0, 9)
+            ship_row, ship_column = randint(0, 7), randint(0, 7)
         board[ship_row][ship_column] = 'X'
