@@ -1,1 +1,2 @@
 [Letter and Number Placeholders](https://www.geeksforgeeks.org/difference-between-s-and-d-in-python-string/)
+[if name/main variable](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
