@@ -66,26 +66,28 @@ def hit_ships(board):
 
 # Spawns board, sets the turns to 10
 # Displays messages in relation to what input data is recieved from the player
-if __name__ == "__main__":
-    spawn_ship(PLAYER_BOARD)
-    turns = 10
-    while turns > 0:
-        print("Welcome to Battleship!")
-        print_board(COMPUTER_BOARD)
-        row, column = ship_position()
-        if COMPUTER_BOARD[row][column] == "-":
-            print("You already guessed that")
-        elif PLAYER_BOARD[row][column] == "X":
-            print("Congrats! You hit a ship!")
-            COMPUTER_BOARD[row][column] = "X"
-            turns -= 1
-        else:
-            print("Sorry you missed!")
-            COMPUTER_BOARD[row][column] = "-"
-            turns -= 1
-        if hit_ships(COMPUTER_BOARD) == 5:
-            print("Congratulations, you have sunk all the ships!")
-            break
-        print("You have " + str(turns) + " turns remaining")
-        if turns == 0:
-            print("You ran out of turns, Game Over!")
+def main():
+    if __name__ == "__main__":
+        spawn_ship(PLAYER_BOARD)
+        turns = 10
+        while turns > 0:
+            print("Welcome to Battleship!")
+            print_board(COMPUTER_BOARD)
+            row, column = ship_position()
+            if COMPUTER_BOARD[row][column] == "-":
+                print("You already guessed that")
+            elif PLAYER_BOARD[row][column] == "X":
+                print("Congrats! You hit a ship!")
+                COMPUTER_BOARD[row][column] = "X"
+                turns -= 1
+            else:
+                print("Sorry you missed!")
+                COMPUTER_BOARD[row][column] = "-"
+                turns -= 1
+            if hit_ships(COMPUTER_BOARD) == 5:
+                print("Congratulations, you have sunk all the ships!")
+                break
+            print("You have " + str(turns) + " turns remaining")
+            if turns == 0:
+                print("You ran out of turns, Game Over!")
+main()
