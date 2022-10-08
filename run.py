@@ -1,6 +1,6 @@
 from random import randint
 
-# Creates the player and computers board sizes
+# Creates the playing boards
 PLAYER_BOARD = [[" "] * 5 for x in range(5)]
 COMPUTER_BOARD = [[" "] * 5 for i in range(5)]
 
@@ -13,7 +13,7 @@ letter_to_number = {
 
 def print_board(board):
     """
-    Prints the player and computer board to the terminal
+    Prints the board to the terminal
     """
     print('  A B C D E')
     print('  ---------')
@@ -41,7 +41,8 @@ def ship_position():
     """
     Input field to enter ship row and column
     Checks if the input is valid
-    Returns row as an integer and removes 1 for indexing, converts letters to numbers
+    Returns row as an integer and removes 1 for indexing
+    Converts letters to numbers
     """
     row = input("Please enter a ship row 1-5: \n")
     while row not in '12345':
@@ -71,10 +72,15 @@ def hit_ships(board):
 # Spawns board, sets the turns to 10
 # Displays messages in relation to what input data is recieved from the player
 def main():
+    """
+    Spawns the gaming board and sets the turns to 10
+
+    """
     if __name__ == "__main__":
         spawn_ship(PLAYER_BOARD)
         turns = 10
         while turns > 0:
+            print("______________________")
             print("Welcome to Battleship!")
             print_board(COMPUTER_BOARD)
             row, column = ship_position()
@@ -93,5 +99,6 @@ def main():
                 break
             print("You have " + str(turns) + " turns remaining")
             if turns == 0:
-                print("You ran out of turns, Game Over!")            
+                print("You ran out of turns, Game Over!")      
+                play_again()      
 main()
